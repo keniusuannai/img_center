@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from placehold import views as main_views
+from placehold import views as placehold_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^(\d+)[/]?$', main_views.index),
-    url(r'^(\d+)[x|X](\d+)[/]?$', main_views.index),
-    url(r'^(\d+)[x|X](\d+)/([0-9a-fA-F]{6}|[0-9a-fA-F]{3})/([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$', main_views.index)
+
+    url(r'^(\d+)[/]?$', placehold_views.index),
+    url(r'^(\d+)[x|X](\d+)[/]?$', placehold_views.index),
+    url(r'^(\d+)[x|X](\d+)/([0-9a-fA-F]{6}|[0-9a-fA-F]{3})/([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$', placehold_views.index)
 ]
