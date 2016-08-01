@@ -19,6 +19,7 @@ from mainApp import views as main_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^(\d+)[/]?$', main_views.index),
     url(r'^(\d+)[x|X](\d+)[/]?$', main_views.index),
     url(r'^(\d+)[x|X](\d+)/([0-9a-fA-F]{6}|[0-9a-fA-F]{3})/([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$', main_views.index)
 ]
