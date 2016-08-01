@@ -7,7 +7,7 @@ def index(request, width=0, height=0, bg_color='ccc', fn_color='969696'):
     _height = int(height)
     if ((_width + _height) == _width):
         _height = _width
-    txt = request.GET.get('text', str(_width) + '×' + str(_height)).replace('+', ' ')
+    txt = request.GET.get('txt', str(_width) + '×' + str(_height)).replace('+', ' ')
     txtsize = request.GET.get('txtsize', int(_width / 10))
 
     image = Image.new('RGB', (_width, _height), '#' + bg_color)
