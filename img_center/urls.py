@@ -16,11 +16,14 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from placehold import views as placehold_views
+from backstage import views as backstage_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^(\d+)[/]?$', placehold_views.index),
     url(r'^(\d+)[x|X](\d+)[/]?$', placehold_views.index),
-    url(r'^(\d+)[x|X](\d+)/([0-9a-fA-F]{6}|[0-9a-fA-F]{3})/([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$', placehold_views.index)
+    url(r'^(\d+)[x|X](\d+)/([0-9a-fA-F]{6}|[0-9a-fA-F]{3})/([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$', placehold_views.index),
+
+    url(r'^backstage/', backstage_views.index),
 ]
